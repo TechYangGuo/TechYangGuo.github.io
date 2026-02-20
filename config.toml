@@ -1,0 +1,7 @@
+baseURL = 'https://techyangguo.github.io/peter-blog/'
+languageCode = 'zh-cn'
+title = "Peter's Tech Blog"
+
+[params]
+  description = "嵌入式软件工程师的技术笔记"
+  author = "Peter"

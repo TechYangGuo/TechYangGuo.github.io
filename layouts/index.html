@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ .Title }}</title>
+  <meta charset="utf-8">
+</head>
+<body>
+  <h1>{{ .Title }}</h1>
+  {{ range .Pages }}
+    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+  {{ end }}
+</body>
+</html>
