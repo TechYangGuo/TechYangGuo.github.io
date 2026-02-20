@@ -1,2 +1,0 @@
-# peter-blog
-peter-blog
