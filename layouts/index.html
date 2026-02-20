@@ -1,13 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-  <title>{{ .Title }}</title>
-  <meta charset="utf-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ .Title }}</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #333; background: #f5f5f5; }
+        header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 3rem 2rem; text-align: center; }
+        header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+        header p { font-size: 1.2rem; opacity: 0.9; }
+        nav { background: #fff; padding: 1rem; text-align: center; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        nav a { color: #667eea; text-decoration: none; margin: 0 1rem; font-weight: 500; }
+        main { max-width: 800px; margin: 2rem auto; padding: 0 1rem; }
+        .post { background: #fff; padding: 2rem; margin-bottom: 1.5rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .post h2 { color: #667eea; margin-bottom: 0.5rem; }
+        .post .date { color: #888; font-size: 0.9rem; margin-bottom: 1rem; }
+        footer { text-align: center; padding: 2rem; color: #888; font-size: 0.9rem; }
+    </style>
 </head>
 <body>
-  <h1>{{ .Title }}</h1>
-  {{ range .Pages }}
-    <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
-  {{ end }}
+    <header>
+        <h1>🖥️ Peter's Tech Blog</h1>
+        <p>嵌入式软件工程师的技术笔记</p>
+        <p>Linux 驱动开发 | IoT | 嵌入式技术</p>
+    </header>
+    <nav>
+        <a href="/">🏠 首页</a>
+        <a href="/posts/">📝 文章</a>
+        <a href="https://github.com/TechYangGuo">🐙 GitHub</a>
+    </nav>
+    <main>
+        {{ range .Pages }}
+        <article class="post">
+            <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+            <p class="date">📅 {{ .Date.Format "2006-01-02" }}</p>
+            <p>{{ .Summary }}</p>
+        </article>
+        {{ end }}
+    </main>
+    <footer>
+        <p>© 2026 Peter's Tech Blog | Powered by Hugo</p>
+    </footer>
 </body>
 </html>
